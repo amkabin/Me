@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #0a0a0a;
+  color: #e5e5e5;
+}
+
+.section-title {
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 700;
+  color: #e5e5e5;
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.24);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-box:hover {
+  border-color: rgba(201, 168, 76, 0.7);
+  box-shadow: 0 0 25px rgba(201, 168, 76, 0.2);
+}
+
+.input-style {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(201, 168, 76, 0.32);
+  background: rgba(17, 24, 39, 0.55);
+  padding: 0.72rem 0.9rem;
+  color: #e5e5e5;
+  outline: none;
+}
+
+.input-style:focus {
+  border-color: #c9a84c;
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.15);
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  padding: 0.55rem;
+  color: #e5e5e5;
+  transition: all 0.25s ease;
+}
+
+.icon-btn:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.32);
+}
+
+.hero-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.blue-micro-grid {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.10) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.teal-dot-grid {
+  background-image: radial-gradient(rgba(20, 184, 166, 0.12) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.purple-crosshatch {
+  background-image: 
+    repeating-linear-gradient(45deg, rgba(168, 85, 247, 0.08) 0, rgba(168, 85, 247, 0.08) 1px, transparent 1px, transparent 12px),
+    repeating-linear-gradient(-45deg, rgba(168, 85, 247, 0.08) 0, rgba(168, 85, 247, 0.08) 1px, transparent 1px, transparent 12px);
+  background-size: 16px 16px;
+}
+
+.green-blueprint {
+  background-image: 
+    linear-gradient(rgba(34, 197, 94, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.10) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.amber-scanlines {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 48px,
+    rgba(245, 158, 11, 0.12) 48px,
+    rgba(245, 158, 11, 0.12) 49px
+  );
+}
+
+.neutral-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
