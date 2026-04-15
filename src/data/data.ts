@@ -32,8 +32,8 @@ export const personalInfo = {
   email: "Kavukuabrian@gmail.com",
   github: "https://github.com/amkabin",
   whatsapp: "https://wa.link/ncuw9q",
-  resume: "/resume.pdf",
-  profileImage: "/profile.jpeg",
+  resume: "resume.pdf",
+  profileImage: "profile.jpeg",
   shortIntro:
     "Building scalable, user-focused web applications with modern full-stack technologies.",
 };
@@ -86,7 +86,7 @@ export const projects: ProjectItem[] = [
     description:
       "A web-based trading journal for logging trades, tracking profit/loss, and reviewing performance summaries for better decisions.",
     tech: ["HTML", "CSS", "JavaScript", "LocalStorage"],
-    image: "/project1.jpg",
+    image: "project1.jpg",
     status: "In Development",
     github: "Coming Soon",
     demo: "Coming Soon",
@@ -96,7 +96,7 @@ export const projects: ProjectItem[] = [
     description:
       "A clean and intuitive expense tracker to record income and expenses, categorize transactions, and visualize spending behavior.",
     tech: ["HTML", "CSS", "JavaScript", "LocalStorage"],
-    image: "/project2.jpg",
+    image: "project2.jpg",
     status: "In Development",
     github: "Coming Soon",
     demo: "Coming Soon",
@@ -114,7 +114,7 @@ export const projects: ProjectItem[] = [
       "JWT",
       "bcrypt",
     ],
-    image: "/project3.jpg",
+    image: "project3.jpg",
     status: "In Development",
     github: "Coming Soon",
     demo: "Coming Soon",
