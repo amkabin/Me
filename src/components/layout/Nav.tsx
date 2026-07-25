@@ -16,14 +16,11 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    if (open) document.body.style.overflow = "hidden"
-    else document.body.style.overflow = ""
+    document.body.style.overflow = open ? "hidden" : ""
     return () => { document.body.style.overflow = "" }
   }, [open])
 
-  useEffect(() => {
-    setOpen(false)
-  }, [pathname])
+  const close = () => setOpen(false)
 
   return (
     <header className="sticky top-0 z-50 border-b border-border-light/40 bg-alabaster/90 backdrop-blur-md">
@@ -32,7 +29,7 @@ export default function Nav() {
           href="/"
           className="font-serif text-xl font-bold tracking-tight text-eggplant"
         >
-          Fancy<span className="text-coffee">.</span>
+          Brian<span className="text-coffee">.</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -57,9 +54,21 @@ export default function Nav() {
           aria-label={open ? "Close menu" : "Open menu"}
         >
           <span className="flex flex-col items-center gap-[5px]">
-            <span className={`block h-[2px] w-5 rounded-full bg-eggplant transition-all duration-300 ${open ? "translate-y-[7px] rotate-45" : ""}`} />
-            <span className={`block h-[2px] w-5 rounded-full bg-eggplant transition-all duration-300 ${open ? "scale-x-0 opacity-0" : ""}`} />
-            <span className={`block h-[2px] w-5 rounded-full bg-eggplant transition-all duration-300 ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
+            <span
+              className={`block h-[2px] w-5 rounded-full bg-eggplant transition-all duration-300 ${
+                open ? "translate-y-[7px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`block h-[2px] w-5 rounded-full bg-eggplant transition-all duration-300 ${
+                open ? "scale-x-0 opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-[2px] w-5 rounded-full bg-eggplant transition-all duration-300 ${
+                open ? "-translate-y-[7px] -rotate-45" : ""
+              }`}
+            />
           </span>
         </button>
       </div>
@@ -73,6 +82,7 @@ export default function Nav() {
           <Link
             key={link.href}
             href={link.href}
+            onClick={close}
             className={`text-2xl font-medium transition-colors hover:text-coffee ${
               pathname === link.href ? "text-coffee" : "text-muted"
             }`}

@@ -17,21 +17,23 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Fancy Nateku Megiri | Software Engineer",
+  title: "Brian Philip | Aspiring Software Engineer",
   description:
-    "Full-stack developer and software engineering student at Kisii University. Building reliable software for real-world problems.",
+    "Aspiring software engineer passionate about building modern web applications with React, Node.js, and TypeScript.",
   openGraph: {
-    title: "Fancy Nateku Megiri | Software Engineer",
+    title: "Brian Philip | Aspiring Software Engineer",
     description:
-      "Full-stack developer building reliable software for real-world problems.",
+      "Aspiring software engineer building modern, responsive web applications.",
     type: "website",
     locale: "en_US",
+    images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fancy Nateku Megiri | Software Engineer",
+    title: "Brian Philip | Aspiring Software Engineer",
     description:
-      "Full-stack developer building reliable software for real-world problems.",
+      "Aspiring software engineer building modern, responsive web applications.",
+    images: ["/og-image.svg"],
   },
   robots: { index: true, follow: true },
 }
