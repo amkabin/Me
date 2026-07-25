@@ -9,59 +9,81 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Agritrack",
+    title: "TradeFlow",
     description:
-      "Smart Finance Management System for Farmers. A full-stack platform that helps farmers track expenses, manage payments, and forecast crop profitability.",
-    tags: ["React", "TypeScript", "Node.js", "MySQL"],
-    liveUrl: "https://agritrack.vercel.app",
-    githubUrl: "https://github.com/Fancy-nateku",
+      "A professional trading journal that helps traders track performance, analyze risk, monitor win rates, and visualize trading statistics through interactive dashboards.",
+    tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Zustand", "Recharts", "LocalStorage"],
+    githubUrl: "https://github.com/amkabin",
   },
   {
-    title: "Role-Based Financial Administration System",
+    title: "CampusWhisper",
     description:
-      "A secure financial administration platform with role-based access control, transaction logging, and approval workflows.",
-    tags: ["React", "Node.js", "TypeScript", "MySQL"],
-    githubUrl: "https://github.com/Fancy-nateku",
+      "An anonymous university discussion platform featuring secure authentication, moderation tools, categories, reactions, and modern social features.",
+    tags: ["Next.js", "TypeScript", "MongoDB", "NextAuth", "Tailwind CSS"],
+    githubUrl: "https://github.com/amkabin",
   },
   {
-    title: "KSUCU-MC Management System",
+    title: "Attendance Management System",
     description:
-      "A comprehensive management system for Kisii University Christian Union. Handles member registration, event scheduling, and communication.",
-    tags: ["TypeScript", "Node.js", "MySQL", "CSS"],
-    liveUrl: "https://ksucu-mc.co.ke",
-    githubUrl: "https://github.com/Fancy-nateku",
+      "A modern attendance management system with authentication, attendance tracking, reporting, and analytics.",
+    tags: ["React", "Node.js", "Express", "MySQL"],
+    githubUrl: "https://github.com/amkabin",
   },
   {
-    title: "Neon Tokyo Developer",
+    title: "Expense Tracker",
     description:
-      "A modern UI with cyberpunk aesthetic — neon gradients, dark glassmorphism, and futuristic typography for a developer portfolio.",
-    tags: ["React", "Bootstrap", "CSS"],
-    githubUrl: "https://github.com/Fancy-nateku",
+      "A personal finance application for tracking income, expenses, and spending habits with an intuitive dashboard.",
+    tags: ["React", "JavaScript", "Local Storage"],
+    githubUrl: "https://github.com/amkabin",
   },
   {
-    title: "Itumbe Resort Website",
+    title: "Portfolio Website",
     description:
-      "A professional business website for Itumbe Resort featuring room booking, gallery, and contact integration.",
-    tags: ["HTML", "CSS", "TypeScript", "MySQL"],
-    githubUrl: "https://github.com/Fancy-nateku",
+      "A modern portfolio showcasing projects, technical skills, and professional experience with smooth animations and responsive design.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    githubUrl: "https://github.com/amkabin",
   },
 ]
 
 export const skills = {
   frontend: [
+    { name: "HTML5", description: "Semantic markup & responsive structure" },
+    { name: "CSS3", description: "Modern styling & layouts" },
+    { name: "JavaScript (ES6+)", description: "Core language & modern features" },
+    { name: "TypeScript", description: "Type-safe JavaScript" },
     { name: "React", description: "Component-based UI development" },
-    { name: "JavaScript / TypeScript", description: "Core language & type safety" },
-    { name: "HTML & CSS", description: "Semantic markup & responsive design" },
-    { name: "Tailwind / Bootstrap", description: "Utility-first & component frameworks" },
+    { name: "Tailwind CSS", description: "Utility-first styling" },
   ],
   backend: [
-    { name: "Node.js / Express", description: "Server-side runtime & API framework" },
-    { name: "Databases (MySQL, PostgreSQL, MongoDB)", description: "Relational & NoSQL data management" },
-    { name: "Authentication (JWT, OAuth, Passport.js)", description: "Secure user identity & access control" },
+    { name: "Node.js", description: "Server-side runtime" },
+    { name: "Express.js", description: "API framework for Node.js" },
+  ],
+  database: [
+    { name: "MongoDB", description: "NoSQL document database" },
+    { name: "MySQL", description: "Relational database management" },
   ],
   tools: [
-    { name: "Git / GitHub", description: "Version control & collaboration" },
-    { name: "Docker", description: "Containerized development & deployment" },
+    { name: "Git", description: "Version control" },
+    { name: "GitHub", description: "Code hosting & collaboration" },
+    { name: "VS Code", description: "Code editor" },
     { name: "Postman", description: "API testing & documentation" },
   ],
+  other: [
+    { name: "REST API Development", description: "Designing & building RESTful services" },
+    { name: "JWT Authentication", description: "Secure token-based auth" },
+    { name: "CRUD Applications", description: "Create, Read, Update, Delete patterns" },
+    { name: "Responsive Design", description: "Mobile-first layouts" },
+    { name: "Deployment (Vercel, Render)", description: "CI/CD & hosting" },
+  ],
+}
+
+export function getCategoryLabel(category: string): string {
+  const labels: Record<string, string> = {
+    frontend: "Frontend",
+    backend: "Backend",
+    database: "Database",
+    tools: "Tools",
+    other: "Other",
+  }
+  return labels[category] || category
 }
