@@ -1,16 +1,16 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#FBFCE9"/>
+  <rect width="1200" height="630" fill="#F3F3F3"/>
   <rect x="0" y="0" width="1200" height="630" fill="url(#gradient)" opacity="0.5"/>
   <defs>
     <linearGradient id="gradient" x1="0" y1="0" x2="1200" y2="630">
-      <stop offset="0%" stop-color="#D9DBC2"/>
-      <stop offset="100%" stop-color="#8FA295" stop-opacity="0.3"/>
+      <stop offset="0%" stop-color="#E4E4E2"/>
+      <stop offset="100%" stop-color="#FFE3D1"/>
     </linearGradient>
   </defs>
-  <text x="80" y="280" font-family="'Playfair Display', Georgia, serif" font-size="80" font-weight="bold" fill="#2E2E2B">Brian</text>
-  <text x="80" y="370" font-family="'Playfair Display', Georgia, serif" font-size="80" font-weight="bold" fill="#3F4A3C">Philip</text>
-  <text x="80" y="440" font-family="'Inter', system-ui, sans-serif" font-size="28" fill="#565350">Aspiring Software Engineer</text>
-  <text x="80" y="480" font-family="'Inter', system-ui, sans-serif" font-size="22" fill="#8FA295">Full-Stack Web Developer</text>
-  <circle cx="1000" cy="315" r="180" fill="#D9DBC2" opacity="0.4"/>
-  <text x="1000" y="340" font-family="'Playfair Display', Georgia, serif" font-size="120" font-weight="bold" fill="#8FA295" text-anchor="middle" opacity="0.5">B</text>
+  <text x="80" y="280" font-family="'Playfair Display', Georgia, serif" font-size="80" font-weight="bold" fill="#1F1E1B">Brian</text>
+  <text x="80" y="370" font-family="'Playfair Display', Georgia, serif" font-size="80" font-weight="bold" fill="#FF6E15">Philip</text>
+  <text x="80" y="440" font-family="'Inter', system-ui, sans-serif" font-size="28" fill="#6B6863">Aspiring Software Engineer</text>
+  <text x="80" y="480" font-family="'Inter', system-ui, sans-serif" font-size="22" fill="#E85D08">Full-Stack Web Developer</text>
+  <circle cx="1000" cy="315" r="180" fill="#E4E4E2" opacity="0.4"/>
+  <text x="1000" y="340" font-family="'Playfair Display', Georgia, serif" font-size="120" font-weight="bold" fill="#FF6E15" text-anchor="middle" opacity="0.5">B</text>
 </svg>

@@ -47,43 +47,33 @@ export const projects: Project[] = [
 
 export const skills = {
   frontend: [
-    { name: "HTML5", description: "Semantic markup & responsive structure" },
-    { name: "CSS3", description: "Modern styling & layouts" },
-    { name: "JavaScript (ES6+)", description: "Core language & modern features" },
-    { name: "TypeScript", description: "Type-safe JavaScript" },
-    { name: "React", description: "Component-based UI development" },
+    { name: "React", description: "Component-based UI, hooks, state management" },
+    { name: "Next.js", description: "Full-stack React applications" },
+    { name: "JavaScript / TypeScript", description: "ES6+, async programming, type safety" },
+    { name: "HTML & CSS", description: "Semantic markup, responsive design" },
     { name: "Tailwind CSS", description: "Utility-first styling" },
   ],
   backend: [
-    { name: "Node.js", description: "Server-side runtime" },
-    { name: "Express.js", description: "API framework for Node.js" },
-  ],
-  database: [
-    { name: "MongoDB", description: "NoSQL document database" },
-    { name: "MySQL", description: "Relational database management" },
+    { name: "Node.js / Express.js", description: "REST APIs, middleware, server-side logic" },
+    { name: "MongoDB / Mongoose", description: "NoSQL databases, data modeling" },
+    { name: "MySQL / PostgreSQL", description: "Relational databases, SQL" },
+    { name: "Prisma", description: "ORM and database management" },
+    { name: "Authentication", description: "Auth.js, JWT, bcrypt, OTP" },
   ],
   tools: [
-    { name: "Git", description: "Version control" },
-    { name: "GitHub", description: "Code hosting & collaboration" },
-    { name: "VS Code", description: "Code editor" },
-    { name: "Postman", description: "API testing & documentation" },
-  ],
-  other: [
-    { name: "REST API Development", description: "Designing & building RESTful services" },
-    { name: "JWT Authentication", description: "Secure token-based auth" },
-    { name: "CRUD Applications", description: "Create, Read, Update, Delete patterns" },
-    { name: "Responsive Design", description: "Mobile-first layouts" },
-    { name: "Deployment (Vercel, Render)", description: "CI/CD & hosting" },
+    { name: "Git / GitHub", description: "Version control, collaboration" },
+    { name: "Postman", description: "API development and testing" },
+    { name: "Vite", description: "Frontend development tooling" },
+    { name: "Cloudinary", description: "Image and media management" },
+    { name: "Stripe / M-Pesa", description: "Payment integration" },
   ],
 }
 
 export function getCategoryLabel(category: string): string {
   const labels: Record<string, string> = {
     frontend: "Frontend",
-    backend: "Backend",
-    database: "Database",
-    tools: "Tools",
-    other: "Other",
+    backend: "Backend & Databases",
+    tools: "Tools & Workflow",
   }
   return labels[category] || category
 }

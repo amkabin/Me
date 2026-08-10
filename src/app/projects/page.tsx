@@ -61,7 +61,7 @@ export default async function Projects() {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 font-medium text-coffee transition-colors hover:text-coffee-dark"
+                  className="flex items-center gap-1 font-medium text-coffee-dark transition-colors hover:text-eggplant"
                 >
                   Live
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -74,7 +74,7 @@ export default async function Projects() {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 font-medium text-coffee transition-colors hover:text-coffee-dark"
+                  className="flex items-center gap-1 font-medium text-coffee-dark transition-colors hover:text-eggplant"
                 >
                   Code
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">

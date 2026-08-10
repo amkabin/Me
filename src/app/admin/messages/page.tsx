@@ -66,7 +66,7 @@ export default function AdminMessages() {
               <button
                 onClick={() => toggleRead(msg)}
                 className={`rounded px-2 py-1 text-xs font-medium ${
-                  msg.read ? "text-muted hover:text-eggplant" : "text-coffee"
+                  msg.read ? "text-muted hover:text-eggplant" : "text-coffee-dark"
                 }`}
               >
                 {msg.read ? "Mark unread" : "Mark read"}

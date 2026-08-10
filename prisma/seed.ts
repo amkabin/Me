@@ -1,7 +1,10 @@
 import { PrismaClient } from "@prisma/client"
+import { PrismaPg } from "@prisma/adapter-pg"
 import bcrypt from "bcryptjs"
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient({
+  adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL ?? "" }),
+})
 
 async function main() {
   console.log("Seeding database...")
@@ -83,83 +86,80 @@ async function main() {
     console.log("Projects seeded")
   }
 
-  const existingSkills = await prisma.skill.count()
-  if (existingSkills === 0) {
-    await prisma.skill.createMany({
-      data: [
-        { name: "HTML5", description: "Semantic markup & responsive structure", category: "frontend", order: 1 },
-        { name: "CSS3", description: "Modern styling & layouts", category: "frontend", order: 2 },
-        { name: "JavaScript (ES6+)", description: "Core language & modern features", category: "frontend", order: 3 },
-        { name: "TypeScript", description: "Type-safe JavaScript", category: "frontend", order: 4 },
-        { name: "React", description: "Component-based UI development", category: "frontend", order: 5 },
-        { name: "Tailwind CSS", description: "Utility-first styling", category: "frontend", order: 6 },
-        { name: "Node.js", description: "Server-side runtime", category: "backend", order: 1 },
-        { name: "Express.js", description: "API framework for Node.js", category: "backend", order: 2 },
-        { name: "MongoDB", description: "NoSQL document database", category: "database", order: 1 },
-        { name: "MySQL", description: "Relational database management", category: "database", order: 2 },
-        { name: "Git", description: "Version control", category: "tools", order: 1 },
-        { name: "GitHub", description: "Code hosting & collaboration", category: "tools", order: 2 },
-        { name: "VS Code", description: "Code editor", category: "tools", order: 3 },
-        { name: "Postman", description: "API testing & documentation", category: "tools", order: 4 },
-        { name: "REST API Development", description: "Designing & building RESTful services", category: "other", order: 1 },
-        { name: "JWT Authentication", description: "Secure token-based auth", category: "other", order: 2 },
-        { name: "CRUD Applications", description: "Create, Read, Update, Delete patterns", category: "other", order: 3 },
-        { name: "Responsive Design", description: "Mobile-first layouts", category: "other", order: 4 },
-        { name: "Deployment (Vercel, Render)", description: "CI/CD & hosting", category: "other", order: 5 },
-      ],
-    })
-    console.log("Skills seeded")
-  }
+  await prisma.skill.deleteMany()
+  await prisma.skill.createMany({
+    data: [
+      { name: "React", description: "Component-based UI, hooks, state management", category: "frontend", order: 1 },
+      { name: "Next.js", description: "Full-stack React applications", category: "frontend", order: 2 },
+      { name: "JavaScript / TypeScript", description: "ES6+, async programming, type safety", category: "frontend", order: 3 },
+      { name: "HTML & CSS", description: "Semantic markup, responsive design", category: "frontend", order: 4 },
+      { name: "Tailwind CSS", description: "Utility-first styling", category: "frontend", order: 5 },
+      { name: "Node.js / Express.js", description: "REST APIs, middleware, server-side logic", category: "backend", order: 1 },
+      { name: "MongoDB / Mongoose", description: "NoSQL databases, data modeling", category: "backend", order: 2 },
+      { name: "MySQL / PostgreSQL", description: "Relational databases, SQL", category: "backend", order: 3 },
+      { name: "Prisma", description: "ORM and database management", category: "backend", order: 4 },
+      { name: "Authentication", description: "Auth.js, JWT, bcrypt, OTP", category: "backend", order: 5 },
+      { name: "Git / GitHub", description: "Version control, collaboration", category: "tools", order: 1 },
+      { name: "Postman", description: "API development and testing", category: "tools", order: 2 },
+      { name: "Vite", description: "Frontend development tooling", category: "tools", order: 3 },
+      { name: "Cloudinary", description: "Image and media management", category: "tools", order: 4 },
+      { name: "Stripe / M-Pesa", description: "Payment integration", category: "tools", order: 5 },
+    ],
+  })
+  console.log("Skills seeded")
 
-  const existingSettings = await prisma.siteSetting.count()
-  if (existingSettings === 0) {
-    await prisma.siteSetting.createMany({
-      data: [
+  const settings = [
         {
           key: "site_title",
-          value: JSON.stringify("Brian Philip | Aspiring Software Engineer"),
+          value: "Brian Philip | Aspiring Software Engineer",
         },
         {
           key: "site_description",
-          value: JSON.stringify("Aspiring software engineer passionate about building modern web applications with React, Node.js, and TypeScript."),
+          value: "Aspiring software engineer passionate about building modern web applications with React, Node.js, and TypeScript.",
         },
         {
           key: "hero_name",
-          value: JSON.stringify("Brian Philip"),
+          value: "Brian Philip",
         },
         {
           key: "hero_tagline",
-          value: JSON.stringify("Aspiring Software Engineer | Full-Stack Web Developer"),
+          value: "Aspiring Software Engineer | Full-Stack Web Developer",
         },
         {
           key: "hero_bio",
-          value: JSON.stringify("I am an aspiring software engineer passionate about building modern, responsive, and user-focused web applications. I enjoy creating clean interfaces, developing scalable backend systems, and continuously improving my skills through real-world projects."),
+          value: "I am an aspiring software engineer passionate about building modern, responsive, and user-focused web applications. I enjoy creating clean interfaces, developing scalable backend systems, and continuously improving my skills through real-world projects.",
         },
         {
           key: "about_content",
-          value: JSON.stringify([
+          value: [
             "Hello, I'm Brian Philip, an aspiring software engineer passionate about building modern web applications and solving real-world problems through technology. I enjoy developing full-stack applications using React, Node.js, Express, MongoDB, and MySQL. I focus on writing clean, maintainable code and creating intuitive user experiences while continually learning new technologies.",
             "My journey into software started with curiosity about how websites and applications work behind the scenes. That curiosity led me to explore frontend design, backend logic, and database management — eventually building full-stack projects from the ground up.",
             "I believe the best software solves real problems for real people. Whether it's a trading journal for tracking investments, an anonymous discussion platform, or a simple expense tracker, I enjoy creating tools that make everyday tasks easier and more efficient.",
             "I'm currently focused on deepening my understanding of full-stack development, exploring new technologies, and building projects that challenge me to grow as a developer.",
-          ]),
+          ],
         },
         {
           key: "footer_copyright",
-          value: JSON.stringify("Brian Philip. All rights reserved."),
+          value: "Brian Philip. All rights reserved.",
         },
         {
           key: "contact_email",
-          value: JSON.stringify("kavukuabrian@gmail.com"),
+          value: "kavukuabrian@gmail.com",
         },
         {
           key: "contact_phone",
-          value: JSON.stringify("+254 704 458 044"),
+          value: "+254 704 458 044",
         },
-      ],
+      ]
+
+  for (const s of settings) {
+    await prisma.siteSetting.upsert({
+      where: { key: s.key },
+      update: { value: s.value },
+      create: { key: s.key, value: s.value },
     })
-    console.log("Site settings seeded")
   }
+  console.log("Site settings seeded")
 
   const existingSocial = await prisma.socialLink.count()
   if (existingSocial === 0) {

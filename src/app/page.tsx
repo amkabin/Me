@@ -9,6 +9,8 @@ interface SkillItem {
   category: string
 }
 
+const CATEGORY_ORDER = ["frontend", "backend", "tools"]
+
 export default async function Home() {
   let projects = fallbackProjects as (typeof fallbackProjects[number] & { id?: string })[]
   let skills: SkillItem[] = []
@@ -158,7 +160,7 @@ export default async function Home() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 font-medium text-coffee transition-colors hover:text-coffee-dark"
+                    className="flex items-center gap-1 font-medium text-coffee-dark transition-colors hover:text-eggplant"
                   >
                     Live
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -171,7 +173,7 @@ export default async function Home() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 font-medium text-coffee transition-colors hover:text-coffee-dark"
+                    className="flex items-center gap-1 font-medium text-coffee-dark transition-colors hover:text-eggplant"
                   >
                     Code
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
@@ -197,23 +199,28 @@ export default async function Home() {
           </h2>
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
-                  {Object.entries(grouped).map(([category, items]) => (
-              <div key={category}>
-                <div className="rounded-xl border border-border-light/60 bg-cream p-6 shadow-sm">
-                  <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.15em] text-coffee-dark">
-                    {getCategoryLabel(category)}
-                  </h3>
-                  <div className="space-y-4">
-                    {items.map((item, i) => (
-                      <div key={i}>
-                        <p className="text-sm font-medium text-eggplant">{item.name}</p>
-                        {item.description && <p className="text-xs text-muted">{item.description}</p>}
+            {Object.keys(grouped)
+              .sort((a, b) => CATEGORY_ORDER.indexOf(a) - CATEGORY_ORDER.indexOf(b))
+              .map((category) => {
+                const items = grouped[category]
+                return (
+                  <div key={category} className="h-full">
+                    <div className="flex h-full flex-col rounded-xl border border-border-light/60 bg-cream p-6 shadow-sm">
+                      <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.15em] text-coffee-dark">
+                        {getCategoryLabel(category)}
+                      </h3>
+                      <div className="space-y-4">
+                        {items.map((item, i) => (
+                          <div key={i}>
+                            <p className="text-sm font-medium text-eggplant">{item.name}</p>
+                            {item.description && <p className="text-xs text-muted">{item.description}</p>}
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                )
+              })}
           </div>
         </section>
       )}

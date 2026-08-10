@@ -24,19 +24,19 @@ export default async function AdminLayout({
 
   return (
     <div className="flex min-h-screen">
-      <aside className="flex w-56 flex-col bg-[#1f2b1d] text-[#D9DBC2]">
+      <aside className="flex w-56 flex-col bg-[#1F1E1B] text-[#F3F3F3]">
         <div className="border-b border-white/10 px-5 py-5">
           <Link href="/admin" className="font-serif text-lg font-bold tracking-tight">
-            Brian<span className="text-[#8FA295]">.</span>
+            Brian<span className="text-[#FF6E15]">.</span>
           </Link>
-          <p className="mt-0.5 text-xs text-[#8FA295]">Admin Panel</p>
+          <p className="mt-0.5 text-xs text-[#FF6E15]">Admin Panel</p>
         </div>
         <nav className="flex-1 space-y-0.5 px-3 py-4">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-[#D9DBC2]/70 transition-colors hover:bg-white/5 hover:text-[#D9DBC2]"
+              className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-[#F3F3F3]/70 transition-colors hover:bg-white/5 hover:text-[#F3F3F3]"
             >
               <span className="w-4 text-center text-xs">{item.icon}</span>
               {item.label}
@@ -46,7 +46,7 @@ export default async function AdminLayout({
         <div className="border-t border-white/10 px-5 py-4">
           <Link
             href="/"
-            className="text-xs text-[#8FA295] transition-colors hover:text-[#D9DBC2]"
+            className="text-xs text-[#FF6E15] transition-colors hover:text-[#F3F3F3]"
           >
             ← View site
           </Link>
